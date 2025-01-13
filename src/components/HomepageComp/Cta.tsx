@@ -17,7 +17,7 @@ const Cta = () => {
             <div className="pad">
               <Link href={"/courses"}>
                 <div className="a">
-                  <LinkStyle color="#fff" hovercolor="#fff">
+                  <LinkStyle color="#fff" >
                     View all Courses
                   </LinkStyle>
                 </div>

@@ -292,12 +292,9 @@ export const CtaStyles = styled.div`
     align-items: center;
     border-radius: 8px;
     background: var(--purple, #D4A64E);
-    box-shadow: 0px 4px 8px 0px rgba(125, 38, 205, 0.3);
     width: 100%;
   }
-  .a:hover {
-    background: var(--purple-600, #6820ab);
-  }
+  
   @media screen and (min-width: 490px) and (max-width: 690px) {
     .cta {
       gap: 0;

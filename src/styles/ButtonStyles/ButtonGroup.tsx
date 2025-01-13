@@ -24,7 +24,7 @@ export const FilterButtonStyles = styled.button<IFilterStyle>`
   ${(props) =>
     props.$isSelected &&
     css`
-      background: var(--purple-100, #111);
+      background: var(--purple-100, #D4A64E);
       box-shadow: 0px 0px 2px 0px rgba(125, 38, 205, 0.3);
     `}
   display: flex;
@@ -32,13 +32,13 @@ export const FilterButtonStyles = styled.button<IFilterStyle>`
   justify-content: center;
   width: fit-content;
   align-items: center;
-  color: var(--grey-500, #525252);
+  color: var(--grey-500, #111);
   font-size: 0.875rem;
   font-family: DM Sans;
   white-space: nowrap;
   line-height: 1.5rem;
   &:hover {
-    background: var(--purple-100, #111);
+    background: var(--purple-100, #D4A64E);
     box-shadow: 0px 0px 2px 1px rgba(125, 38, 205, 0.3);
   }
 `;

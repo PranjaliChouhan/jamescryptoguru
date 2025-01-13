@@ -180,6 +180,7 @@ export const TextareaStyles = styled.div`
 export const ReachoutStyles = styled.div`
   margin-top: 1rem;
   .contacts {
+  
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;

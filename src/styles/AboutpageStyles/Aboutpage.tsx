@@ -139,7 +139,7 @@ export const SocialsCompStyles = styled.div`
     gap: 0.75rem;
   }
   .a:hover {
-    background: var(--purple-100, #111);
+    background: var(--purple-100,  #D4A64E);
   }
   @media screen and (max-width: 490px) {
     svg {

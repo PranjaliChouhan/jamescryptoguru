@@ -41,10 +41,10 @@ export const LinkStyle = styled.p<ILinkB>`
   font-weight: 600;
   line-height: 1.5rem;
   width: fit-content;
-  &:hover {
-    color: #fff;
+   &:hover {
+    
     text: #111;
-  }
+   }
   ${(props) =>
     props.hovercolor &&
     css`

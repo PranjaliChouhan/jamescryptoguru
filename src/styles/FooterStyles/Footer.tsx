@@ -8,7 +8,7 @@ margin-top: 2.5rem;
     gap: 1.5rem;
     flex-direction: column;
   }
-  background: var(--purple-1000, #190829);
+  background: var(--purple-1000, #111);
   .icons {
     display: flex;
     flex-direction: column;

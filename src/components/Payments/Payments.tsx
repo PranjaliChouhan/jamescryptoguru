@@ -107,16 +107,6 @@ export const PaymentForm: FunctionComponent = ({}) => {
       price: course?.dollarPrice,
       isInstallmental: false,
     },
-    {
-      name: "Installments",
-      $isSelected: false,
-      price: course?.dollarPrice,
-      isInstallmental: true,
-      installmentsDuration: course?.duration,
-      installmentalPrice: course
-        ? Math.round((course.dollarPrice * 100) / course.duration) / 100
-        : undefined,
-    },
   ];
   const [plansState, setPlansState] = useState(plans);
 
@@ -646,7 +636,7 @@ export const PaymentForm: FunctionComponent = ({}) => {
                               /month
                             </h4>
                             <div className="section-name">
-                              approx ${plan.installmentalPrice}/month
+                              {/* approx ${plan.installmentalPrice}/month */}
                             </div>
                           </>
                         )}
@@ -657,9 +647,9 @@ export const PaymentForm: FunctionComponent = ({}) => {
                               &#8358;
                               {convertToNaira(plan.price).toLocaleString()}
                             </h4>
-                            <div className="section-name">
+                            {/* <div className="section-name">
                               approx ${plan.price}
-                            </div>
+                            </div> */}
                           </>
                         )}
                       </div>
@@ -776,7 +766,7 @@ export const Plan: FunctionComponent<IPlanFC> = ({
           {isInstallmental && installmentalPrice && (
             <XtraSmall>approx ${installmentalPrice}/month</XtraSmall>
           )}
-          {!isInstallmental && <XtraSmall>approx ${price}</XtraSmall>}
+          {!isInstallmental && <XtraSmall> $45</XtraSmall>}
         </div>
       </div>
     </PlanStyles>
