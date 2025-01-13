@@ -1,7 +1,7 @@
 import { HeaderStyle } from "@/styles/HeaderStyles/Header";
-import Image from "next/image";
+
 import Link from "next/link";
-import { Heart, Logo, MagnifyingGlass, Menu, Notification } from "../Icons/Icons";
+import { Logo, MagnifyingGlass, Menu } from "../Icons/Icons";
 import Search from "./Search";
 import React, { FunctionComponent, useEffect } from "react";
 import { PageLinkStyle } from "@/styles/LinkStyles/Link";
