@@ -6,8 +6,8 @@ import { Send, Users, Smile } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
+// import data from '@emoji-mart/data'
+// import Picker from '@emoji-mart/react'
 
 const socket = typeof window !== 'undefined' ? io('http://localhost:3000') : null
 
@@ -149,7 +149,7 @@ const ChatRoom: React.FC = () => {
             </div>
             {showEmojiPicker && (
               <div className="absolute bottom-16 right-4">
-                <Picker data={data} onEmojiSelect={handleEmojiSelect} />
+                {/* <Picker data={data} onEmojiSelect={handleEmojiSelect} /> */}
               </div>
             )}
           </div>
