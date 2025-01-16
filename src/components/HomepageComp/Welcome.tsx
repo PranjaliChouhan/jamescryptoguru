@@ -42,7 +42,7 @@ const Welcome: FunctionComponent = () => {
                 whileInView= "final"
                 viewport={{once : true }}
                 >
-                  <h3>Welcome to James Cryptoguru trading Website</h3>
+                  <h3>Welcome to trading University</h3>
                   <p className="small">
                     In JCG, we guide you with the best available teaching and
                     mentoring needed in your trading career and also give you the

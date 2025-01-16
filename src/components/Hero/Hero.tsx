@@ -8,7 +8,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 const Hero: FunctionComponent = () => {
   const [text] = useTypewriter({
-    words: ["Start", "Begin"],
+    words: ["Trading", "Investing", "Business"],
     loop: true,
     typeSpeed: 100,
     delaySpeed: 4800,
@@ -18,8 +18,8 @@ const Hero: FunctionComponent = () => {
       <HeroStyles>
         <div className="hero-text">
           <h1>
-            Let’s help you <strong>{text} <span><Cursor cursorColor="#D4A64E" /></span></strong> <br />
-            your career in <strong>Trade</strong>
+            Let’s get you Start  <br />
+            your career in <strong>{text} <span><Cursor cursorColor="#D4A64E" /></span></strong>
           </h1>
           <p className="hero-p">
             JCG is an inclusive E-Learning platform that specializes in helping
