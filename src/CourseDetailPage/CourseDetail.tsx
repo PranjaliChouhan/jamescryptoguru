@@ -186,27 +186,8 @@ export const CourseDetailComp = () => {
                   <div className="mobile">
                     {!userCourse?.isPaid && (
                       <>
-                        <div className="discount">
-                          <RegularSmallStyles color="#525252">
-                            Got a discount code, click{" "}
-                            <Link href="#" className="link">
-                              here
-                            </Link>
-                          </RegularSmallStyles>
-                        </div>
-                        <div className="prices">
-                          <h6>
-                            &#8358;
-                            {course.nairaPrice === null
-                              ? convertToNaira(
-                                  course.dollarPrice
-                                ).toLocaleString()
-                              : course.nairaPrice.toLocaleString()}
-                          </h6>
-                          <DetailSmallStyles>
-                            approx ${course.dollarPrice}
-                          </DetailSmallStyles>
-                        </div>
+                       
+                       
                       </>
                     )}
                     <div className="btns">
@@ -214,13 +195,11 @@ export const CourseDetailComp = () => {
                         onClick={() => handleClickPayments(true)}
                         disabled={userCourse?.isPaid}
                       >
-                        {userCourse?.isPaid ? <>Enrolled</> : <>Enroll Now</>}
+                        {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
                       </FormBtnStyles>
                       {!userCourse?.isPaid && (
                         <>
-                          <BoldXtraSmallStyles color="var(--grey-700, #272727)">
-                            Or
-                          </BoldXtraSmallStyles>
+                          
                           <TransparentFormBtnStyles
                             onClick={() => handleClickTryFree(true)}
                             disabled={userCourse?.isFree}
@@ -267,13 +246,11 @@ export const CourseDetailComp = () => {
                       onClick={() => handleClickPayments(true)}
                       disabled={userCourse?.isPaid}
                     >
-                      {userCourse?.isPaid ? <>Enrolled</> : <>Enroll Now</>}
+                      {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
                     </FormBtnStyles>
                     {!userCourse?.isPaid && (
                       <>
-                        <BoldXtraSmallStyles color="var(--grey-700, #272727)">
-                          Or
-                        </BoldXtraSmallStyles>
+                       
                         <TransparentFormBtnStyles
                           onClick={() => handleClickTryFree(true)}
                           disabled={userCourse?.isFree}
