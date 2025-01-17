@@ -53,7 +53,6 @@
     skills: string[];
     syllabus : IModule[];
     requirements : string[];
-    tutors : ITutor[];
     reviews : IReview[];
     totalReviews: number;
     introVideo : string;

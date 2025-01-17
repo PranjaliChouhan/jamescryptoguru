@@ -2,7 +2,7 @@ import { HeaderStyle } from "@/styles/HeaderStyles/Header";
 import { MobileNavStyles } from "@/styles/HeaderStyles/MobileNav";
 
 import Link from "next/link";
-import { Logo, MagnifyingGlass, Menu } from "../Icons/Icons";
+import { Logo, Menu, } from "../Icons/Icons";
 import Search from "./Search";
 import React, { FunctionComponent, useEffect } from "react";
 import { PageLinkStyle } from "@/styles/LinkStyles/Link";
@@ -99,7 +99,7 @@ const Header: FunctionComponent = () => {
 
       <div className="mobile mobile-nav-links">
         <Search />
-        <Menu toggleMenu={toggleMenu} />
+        <Menu toggleMenu={toggleMenu} isNavOpen={isNavOpen} />
       </div>
 
       {isNavOpen && (

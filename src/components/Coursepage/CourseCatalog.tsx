@@ -87,7 +87,6 @@ const CourseCatalog: FunctionComponent = () => {
               skills={ele.skills}
               syllabus={ele.syllabus}
               requirements={ele.requirements}
-              tutors={ele.tutors}
               reviews={ele.reviews}
               totalReviews={ele.totalReviews}
               introVideo={ele.introVideo}
@@ -113,7 +112,6 @@ const CourseCatalog: FunctionComponent = () => {
               skills={ele.skills}
               syllabus={ele.syllabus}
               requirements={ele.requirements}
-              tutors={ele.tutors}
               reviews={ele.reviews}
               totalReviews={ele.totalReviews}
               introVideo={ele.introVideo}

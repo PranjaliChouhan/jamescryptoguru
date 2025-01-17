@@ -130,11 +130,10 @@ export const Notification: FunctionComponent = () => {
 // will use this for both the menu icon and cancel, will recieve props to switch btw both
 export interface IMenuComp {
   toggleMenu: () => void;
+  isNavOpen: boolean;
 }
 
-export const Menu: FunctionComponent<IMenuComp> = ({ toggleMenu }) => {
-  const { isNavOpen } = useAppSelector((state: RootState) => state.data);
-
+export const Menu: FunctionComponent<IMenuComp> = ({ toggleMenu, isNavOpen }) => {
   return (
     <MenuStyle onClick={toggleMenu}>
       {isNavOpen ? (
@@ -200,6 +199,7 @@ export const Menu: FunctionComponent<IMenuComp> = ({ toggleMenu }) => {
     </MenuStyle>
   );
 };
+
 
 export const MagnifyingGlass: FunctionComponent = () => {
   return (

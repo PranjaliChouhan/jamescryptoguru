@@ -37,7 +37,7 @@ export const MobileNavStyles = styled(motion.div).attrs(() => ({
     display : flex;
     flex-direction : column;
     justify-content : space-between;
-    height: 90vh;
+    height:100vh;
   }
   .sidemenu-links{
     display : flex;

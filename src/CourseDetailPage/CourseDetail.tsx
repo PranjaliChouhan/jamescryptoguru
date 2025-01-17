@@ -313,7 +313,7 @@ export const CourseDetailComp = () => {
                     {openTab?.num === 2 && (
                       <Requirement list={course.requirements} />
                     )}
-                    {openTab?.num === 3 && <Tutors tutorlist={course.tutors} />}
+                    {openTab?.num === 3 && <Quiz />}
                     {openTab?.num === 4 && (
                       <Reviews reviewList={course.reviews} />
                     )}
@@ -348,10 +348,10 @@ export const CourseDetailComp = () => {
                     </Drawer>
 
                     {/* finish the tutors and reviews later */}
-                    <Drawer sometext="Tutors" defaultOpen={false}>
+                    <Drawer sometext="Quiz" defaultOpen={false}>
                       <div className=""></div>
-                      <TutorList tutorlist={course.tutors} />
-                    </Drawer>
+                      <Quiz />                    
+                      </Drawer>
                     <Drawer sometext="Reviews" defaultOpen={false}>
                       <div className=""></div>
                       <ReviewList reviewList={course.reviews} />
@@ -627,38 +627,38 @@ export const Requirement: FunctionComponent<IListComp> = ({ list }) => {
 };
 
 // finish the tutors and reviews later
-export const Tutors: FunctionComponent<ITutorList> = ({ tutorlist }) => {
-  return (
-    <HeightControlStyles>
-      <TutorsStyles>
-        <DetailHeadStyles>Tutors</DetailHeadStyles>
-        <TutorList tutorlist={tutorlist} />
-      </TutorsStyles>
-    </HeightControlStyles>
-  );
-};
+// export const Tutors: FunctionComponent<ITutorList> = ({ tutorlist }) => {
+//   return (
+//     <HeightControlStyles>
+//       <TutorsStyles>
+//         <DetailHeadStyles>Tutors</DetailHeadStyles>
+//         <TutorList tutorlist={tutorlist} />
+//       </TutorsStyles>
+//     </HeightControlStyles>
+//   );
+// };
 
-interface ITutorList {
-  tutorlist: ITutor[];
-}
-export const TutorList: FunctionComponent<ITutorList> = ({ tutorlist }) => {
-  return (
-    <TutorListStyle>
-      {tutorlist.map((ele, index) => (
-        <div className="tutor" key={index}>
-          <Image alt={ele.name} src={ele.img} width={88} height={88} />
-          <div className="tutor-deet">
-            <TutorHeadStyle>{ele.name}</TutorHeadStyle>
-            <span>{ele.job}</span>
-            <TutorHeadStyle fontWeight={400} fontSize="0.875rem">
-              {ele.email}
-            </TutorHeadStyle>
-          </div>
-        </div>
-      ))}
-    </TutorListStyle>
-  );
-};
+// interface ITutorList {
+//   tutorlist: ITutor[];
+// }
+// export const TutorList: FunctionComponent<ITutorList> = ({ tutorlist }) => {
+//   return (
+//     <TutorListStyle>
+//       {tutorlist.map((ele, index) => (
+//         <div className="tutor" key={index}>
+//           <Image alt={ele.name} src={ele.img} width={88} height={88} />
+//           <div className="tutor-deet">
+//             <TutorHeadStyle>{ele.name}</TutorHeadStyle>
+//             <span>{ele.job}</span>
+//             <TutorHeadStyle fontWeight={400} fontSize="0.875rem">
+//               {ele.email}
+//             </TutorHeadStyle>
+//           </div>
+//         </div>
+//       ))}
+//     </TutorListStyle>
+//   );
+// };
 
 export const Reviews: FunctionComponent<IReviewList> = ({ reviewList }) => {
   return (
@@ -751,3 +751,118 @@ export const Drawer: FunctionComponent<IDrawer> = ({
     </DrawerStyles>
   );
 };
+
+interface IQuizQuestion {
+  question: string;
+  options: string[];
+  correctAnswer: number; // index of the correct answer
+}
+
+const quizQuestions: IQuizQuestion[] = [
+  {
+    question: "What is the primary purpose of UI design?",
+    options: ["To create user interfaces", "To conduct user research", "To develop backend systems", "To write code"],
+    correctAnswer: 0,
+  },
+  {
+    question: "Which tool is commonly used for wireframing?",
+    options: ["Photoshop", "Figma", "Excel", "Word"],
+    correctAnswer: 1,
+  },
+  {
+    question: "What does UX stand for?",
+    options: ["User Experience", "User Exchange", "User Execution", "User Example"],
+    correctAnswer: 0,
+  },
+  {
+    question: "Which of the following is a prototyping tool?",
+    options: ["Adobe XD", "Microsoft Word", "Google Sheets", "Slack"],
+    correctAnswer: 0,
+  },
+  {
+    question: "What is the focus of interaction design?",
+    options: ["Visual aesthetics", "User interactions", "Database management", "Network security"],
+    correctAnswer: 1,
+  },
+];
+
+export const Quiz: React.FC = () => {
+  const [userAnswers, setUserAnswers] = useState<number[]>(new Array(quizQuestions.length).fill(-1))
+  const [showResults, setShowResults] = useState(false)
+
+  const handleAnswerChange = (questionIndex: number, answerIndex: number) => {
+    const newAnswers = [...userAnswers]
+    newAnswers[questionIndex] = answerIndex
+    setUserAnswers(newAnswers)
+  }
+
+  const handleSubmit = () => {
+    setShowResults(true)
+  }
+
+  const calculateScore = () => {
+    return userAnswers.reduce((score, answer, index) => {
+      return score + (answer === quizQuestions[index].correctAnswer ? 1 : 0)
+    }, 0)
+  }
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="w-full max-w-2xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+        <div className="p-6">
+          <h2 className="text-2xl font-bold text-center mb-6">Quiz</h2>
+          {quizQuestions.map((question, index) => (
+            <div key={index} className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">{question.question}</h3>
+              <div className="space-y-2">
+                {question.options.map((option, i) => (
+                  <label key={i} className="flex items-center space-x-2 cursor-pointer">
+                    <input
+                      type="radio"
+                      name={`question-${index}`}
+                      value={i}
+                      checked={userAnswers[index] === i}
+                      onChange={() => handleAnswerChange(index, i)}
+                      className="form-radio"
+                    />
+                    <span>{option}</span>
+                  </label>
+                ))}
+              </div>
+              {showResults && (
+                <p className={`mt-2 ${userAnswers[index] === question.correctAnswer ? 'text-green-600' : 'text-red-600'}`}>
+                  {userAnswers[index] === question.correctAnswer ? 'Correct!' : `Incorrect. The correct answer is: ${question.options[question.correctAnswer]}`}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="px-6 pb-6">
+          {!showResults ? (
+            <button
+              onClick={handleSubmit}
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Submit Answers
+            </button>
+          ) : (
+            <div className="text-center">
+              <p className="text-xl font-bold mb-2">Your Score: {calculateScore()} / {quizQuestions.length}</p>
+              <button
+                onClick={() => {
+                  setShowResults(false)
+                  setUserAnswers(new Array(quizQuestions.length).fill(-1))
+                }}
+                className="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+              >
+                Retake Quiz
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+

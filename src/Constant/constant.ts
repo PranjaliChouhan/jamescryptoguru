@@ -32,20 +32,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+    
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -144,20 +131,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+   
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -255,20 +229,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+    
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -367,20 +328,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 5,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+ 
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -479,20 +427,7 @@ export const AllCourses: ICourse[] = [
       "React",
     ],
     duration: 6,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+   
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -591,20 +526,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -703,20 +625,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -815,20 +724,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+   
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -927,20 +823,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1039,20 +922,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1151,20 +1021,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1263,20 +1120,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1375,20 +1219,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1487,20 +1318,7 @@ export const AllCourses: ICourse[] = [
       "Adobe XD",
     ],
     duration: 3,
-    tutors: [
-      {
-        name: "Dominic Torredo",
-        job: "Software Engineer @Altschool",
-        email: "torredo@gmail.com",
-        img: "/assets/tobi.png",
-      },
-      {
-        name: "Ekundayo Musk",
-        job: "Software Engineer @Twitter",
-        email: "elonekundayomusk@gmail.com",
-        img: "/assets/richard.png",
-      },
-    ],
+  
     requirements: [
       "You don't need a background in user experience, design or coding to take this course. It is totally beginner friendly",
       "This is an in-depth course. Most of your classes will be 2 hours, 3 times a week.",
@@ -1740,8 +1558,9 @@ export const Tabs: ITab[] = [
   { num: 0, name: "OVERVIEW", isSelected: true },
   { num: 1, name: "SYLLABUS", isSelected: false },
   { num: 2, name: "REQUIREMENTS", isSelected: false },
-  { num: 3, name: "TUTORS", isSelected: false },
+  { num: 3, name: "QUIZ", isSelected: false },
   { num: 4, name: "REVIEWS", isSelected: false },
+ 
 ];
 
 export interface IEnrolledCourse {
