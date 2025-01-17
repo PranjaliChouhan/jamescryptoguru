@@ -490,19 +490,7 @@ export const SideCard: FunctionComponent<ISideCard> = ({
           <DetailSmallStyles>{level}</DetailSmallStyles>
         </div>
       </div>
-      {/* {!userCourse?.isPaid && (
-        <>
-          <div className="discount">
-            <RegularSmallStyles color="#525252">
-              Got a discount code, click{" "}
-              <Link href="#" className="link">
-                here
-              </Link>
-            </RegularSmallStyles>
-          </div>
-          
-        </>
-      )} */}
+     
        <div className="btns">
         <FormBtnStyles
           onClick={() => handleMakePayments(true)}
@@ -512,19 +500,7 @@ export const SideCard: FunctionComponent<ISideCard> = ({
         </FormBtnStyles>
         {!userCourse?.isPaid && (
           <>
-            {/* <BoldXtraSmallStyles color="var(--grey-700, #272727)">
-              Or
-            </BoldXtraSmallStyles> */}
-             {/* <TransparentFormBtnStyles
-              onClick={() => handleTryFree(true)}
-              disabled={userCourse?.isFree}
-            >
-              {userCourse?.isFree ? (
-                <>Enrolled in Free Trial!</>
-              ) : (
-                <>Try for 1 week for Free</>
-              )}
-            </TransparentFormBtnStyles>  */}
+            
           </>
         )}
       </div> 
