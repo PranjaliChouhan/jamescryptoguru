@@ -6,6 +6,8 @@ import { SubscribeStyles } from "@/styles/HomepageStyles/Homepage";
 import { FunctionComponent, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Checked } from "../Icons/Icons";
+import { useAppDispatch } from "@/redux/hook";
+import { setUserData } from "@/redux/dataSlice";
 
 interface ISubscribeMail {
   email: string;
@@ -19,10 +21,12 @@ const SubscribeComp: FunctionComponent = () => {
   } = useForm<ISubscribeMail>({ mode: "onBlur", defaultValues: { email: "" } });
 
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const dispatch = useAppDispatch();
+
   const handleSubscribe = (data: ISubscribeMail) => {
-    // pass the data probably to a backend server
-    // console.log(data);
+    // Simulate a successful subscription
     setIsSubscribed(true);
+    dispatch(setUserData({ name: "John Doe", email: data.email })); // Use setUserData
     reset();
   };
   // later: i am not done here, allow users to fill form over and over again but prevent them from entering in the same emails

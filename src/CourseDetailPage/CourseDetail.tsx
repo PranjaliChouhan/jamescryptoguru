@@ -7,9 +7,7 @@ import {
   FaqArrow,
   ThinArrow,
 } from "@/components/Icons/Icons";
-import {
-  FormBtnStyles,
-} from "@/styles/ContactpageStyles/Contact";
+import { FormBtnStyles } from "@/styles/ContactpageStyles/Contact";
 import {
   BoldXtraSmallStyles,
   CourseDetailCompStyles,
@@ -34,11 +32,7 @@ import {
   TutorsStyles,
   VideoStyles,
 } from "@/styles/CoursepageStyles/CourseDetail";
-import {
-  
-  ImprovedDesktopMobile,
-  TabOnly,
-} from "@/styles/HeroStyles/Hero";
+import { ImprovedDesktopMobile, TabOnly } from "@/styles/HeroStyles/Hero";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -53,7 +47,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import {
   FavEmojiButton,
-
   IModule,
   IReview,
   ITutor,
@@ -184,22 +177,20 @@ export const CourseDetailComp = () => {
                     </div>
                   </div>
                   <div className="mobile">
-                    {!userCourse?.isPaid && (
-                      <>
-                       
-                       
-                      </>
-                    )}
+                    {!userCourse?.isPaid && <></>}
                     <div className="btns">
                       <FormBtnStyles
                         onClick={() => handleClickPayments(true)}
                         disabled={userCourse?.isPaid}
                       >
-                        {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
+                        {userCourse?.isPaid ? (
+                          <>Subscribed</>
+                        ) : (
+                          <>Subscribe Now</>
+                        )}
                       </FormBtnStyles>
                       {!userCourse?.isPaid && (
                         <>
-                          
                           <TransparentFormBtnStyles
                             onClick={() => handleClickTryFree(true)}
                             disabled={userCourse?.isFree}
@@ -246,11 +237,14 @@ export const CourseDetailComp = () => {
                       onClick={() => handleClickPayments(true)}
                       disabled={userCourse?.isPaid}
                     >
-                      {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
+                      {userCourse?.isPaid ? (
+                        <>Subscribed</>
+                      ) : (
+                        <>Subscribe Now</>
+                      )}
                     </FormBtnStyles>
                     {!userCourse?.isPaid && (
                       <>
-                       
                         <TransparentFormBtnStyles
                           onClick={() => handleClickTryFree(true)}
                           disabled={userCourse?.isFree}
@@ -327,8 +321,8 @@ export const CourseDetailComp = () => {
                     {/* finish the tutors and reviews later */}
                     <Drawer sometext="Quiz" defaultOpen={false}>
                       <div className=""></div>
-                      <Quiz />                    
-                      </Drawer>
+                      <Quiz />
+                    </Drawer>
                     <Drawer sometext="Reviews" defaultOpen={false}>
                       <div className=""></div>
                       <ReviewList reviewList={course.reviews} />
@@ -371,48 +365,94 @@ export const CourseDetailComp = () => {
 };
 
 interface IVideo {
-  url: string;
+  url: string | JSX.Element;
 }
-export const VideoComp: FunctionComponent<IVideo> = ({ url }) => {
-  // attach a loading state here
-  const [isLoading, setLoading] = useState(true);
-  const ready = () => {
-    setLoading(false);
-  };
+
+export const VideoComp: React.FC<{ url: string | JSX.Element }> = ({ url }) => {
+  const [isLoading, setLoading] = useState(true)
+
+  const handleReady = () => {
+    setLoading(false)
+  }
+
   return (
     <ImprovedDesktopMobile>
       <VideoStyles $isLoading={isLoading}>
         {isLoading && (
-          <div className="load">
-            <Loader size="small" />
-            <TutorHeadStyle>Loading...</TutorHeadStyle>
+          <div className="">
+            {/* <Loader size="small" /> */}
+            {/* <TutorHeadStyle>Loading...</TutorHeadStyle> */}
           </div>
         )}
         <TabOnly>
           <div className="desktop">
-            <ReactPlayer
-              width="100%"
-              height="300px"
-              url={url}
-              onReady={ready}
-            />
+            {typeof url === "string" ? (
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url={url}
+                onReady={handleReady}
+                config={{
+                  vimeo: {
+                    playerOptions: {
+                      responsive: true,
+                      aspectRatio: "16:9",
+                    },
+                  },
+                }}
+              />
+            ) : (
+              url
+            )}
           </div>
           <div className="tab">
-            <ReactPlayer
-              width="100%"
-              height="200px"
-              url={url}
-              onReady={ready}
-            />
+            {typeof url === "string" ? (
+              <ReactPlayer
+                width="100%"
+                height="100%"
+                url={url}
+                onReady={handleReady}
+                config={{
+                  vimeo: {
+                    playerOptions: {
+                      responsive: true,
+                      aspectRatio: "16:9",
+                    },
+                  },
+                }}
+              />
+            ) : (
+              url
+            )}
           </div>
         </TabOnly>
         <div className="mobile">
-          <ReactPlayer width="100%" height="200px" url={url} onReady={ready} />
+          {typeof url === "string" ? (
+            <ReactPlayer
+              width="100%"
+              height="100%"
+              url={url}
+              onReady={handleReady}
+              config={{
+                vimeo: {
+                  playerOptions: {
+                    responsive: true,
+                    aspectRatio: "16:9",
+                  },
+                },
+              }}
+            />
+          ) : (
+            url
+          )}
         </div>
       </VideoStyles>
     </ImprovedDesktopMobile>
-  );
-};
+  )
+}
+
+
+
 
 export interface ISideCard {
   img: string;
@@ -467,20 +507,16 @@ export const SideCard: FunctionComponent<ISideCard> = ({
           <DetailSmallStyles>{level}</DetailSmallStyles>
         </div>
       </div>
-     
-       <div className="btns">
+
+      <div className="btns">
         <FormBtnStyles
           onClick={() => handleMakePayments(true)}
           disabled={userCourse?.isPaid}
         >
           {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
         </FormBtnStyles>
-        {!userCourse?.isPaid && (
-          <>
-            
-          </>
-        )}
-      </div> 
+        {!userCourse?.isPaid && <></>}
+      </div>
     </SideCardStyles>
   );
 };
@@ -738,7 +774,12 @@ interface IQuizQuestion {
 const quizQuestions: IQuizQuestion[] = [
   {
     question: "What is the primary purpose of UI design?",
-    options: ["To create user interfaces", "To conduct user research", "To develop backend systems", "To write code"],
+    options: [
+      "To create user interfaces",
+      "To conduct user research",
+      "To develop backend systems",
+      "To write code",
+    ],
     correctAnswer: 0,
   },
   {
@@ -748,7 +789,12 @@ const quizQuestions: IQuizQuestion[] = [
   },
   {
     question: "What does UX stand for?",
-    options: ["User Experience", "User Exchange", "User Execution", "User Example"],
+    options: [
+      "User Experience",
+      "User Exchange",
+      "User Execution",
+      "User Example",
+    ],
     correctAnswer: 0,
   },
   {
@@ -758,30 +804,37 @@ const quizQuestions: IQuizQuestion[] = [
   },
   {
     question: "What is the focus of interaction design?",
-    options: ["Visual aesthetics", "User interactions", "Database management", "Network security"],
+    options: [
+      "Visual aesthetics",
+      "User interactions",
+      "Database management",
+      "Network security",
+    ],
     correctAnswer: 1,
   },
 ];
 
 export const Quiz: React.FC = () => {
-  const [userAnswers, setUserAnswers] = useState<number[]>(new Array(quizQuestions.length).fill(-1))
-  const [showResults, setShowResults] = useState(false)
+  const [userAnswers, setUserAnswers] = useState<number[]>(
+    new Array(quizQuestions.length).fill(-1)
+  );
+  const [showResults, setShowResults] = useState(false);
 
   const handleAnswerChange = (questionIndex: number, answerIndex: number) => {
-    const newAnswers = [...userAnswers]
-    newAnswers[questionIndex] = answerIndex
-    setUserAnswers(newAnswers)
-  }
+    const newAnswers = [...userAnswers];
+    newAnswers[questionIndex] = answerIndex;
+    setUserAnswers(newAnswers);
+  };
 
   const handleSubmit = () => {
-    setShowResults(true)
-  }
+    setShowResults(true);
+  };
 
   const calculateScore = () => {
     return userAnswers.reduce((score, answer, index) => {
-      return score + (answer === quizQuestions[index].correctAnswer ? 1 : 0)
-    }, 0)
-  }
+      return score + (answer === quizQuestions[index].correctAnswer ? 1 : 0);
+    }, 0);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -790,10 +843,15 @@ export const Quiz: React.FC = () => {
           <h2 className="text-2xl font-bold text-center mb-6">Quiz</h2>
           {quizQuestions.map((question, index) => (
             <div key={index} className="mb-6">
-              <h3 className="text-lg font-semibold mb-2">{question.question}</h3>
+              <h3 className="text-lg font-semibold mb-2">
+                {question.question}
+              </h3>
               <div className="space-y-2">
                 {question.options.map((option, i) => (
-                  <label key={i} className="flex items-center space-x-2 cursor-pointer">
+                  <label
+                    key={i}
+                    className="flex items-center space-x-2 cursor-pointer"
+                  >
                     <input
                       type="radio"
                       name={`question-${index}`}
@@ -807,8 +865,18 @@ export const Quiz: React.FC = () => {
                 ))}
               </div>
               {showResults && (
-                <p className={`mt-2 ${userAnswers[index] === question.correctAnswer ? 'text-green-600' : 'text-red-600'}`}>
-                  {userAnswers[index] === question.correctAnswer ? 'Correct!' : `Incorrect. The correct answer is: ${question.options[question.correctAnswer]}`}
+                <p
+                  className={`mt-2 ${
+                    userAnswers[index] === question.correctAnswer
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }`}
+                >
+                  {userAnswers[index] === question.correctAnswer
+                    ? "Correct!"
+                    : `Incorrect. The correct answer is: ${
+                        question.options[question.correctAnswer]
+                      }`}
                 </p>
               )}
             </div>
@@ -824,11 +892,13 @@ export const Quiz: React.FC = () => {
             </button>
           ) : (
             <div className="text-center">
-              <p className="text-xl font-bold mb-2">Your Score: {calculateScore()} / {quizQuestions.length}</p>
+              <p className="text-xl font-bold mb-2">
+                Your Score: {calculateScore()} / {quizQuestions.length}
+              </p>
               <button
                 onClick={() => {
-                  setShowResults(false)
-                  setUserAnswers(new Array(quizQuestions.length).fill(-1))
+                  setShowResults(false);
+                  setUserAnswers(new Array(quizQuestions.length).fill(-1));
                 }}
                 className="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
               >
@@ -839,7 +909,5 @@ export const Quiz: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
-
-
+  );
+};

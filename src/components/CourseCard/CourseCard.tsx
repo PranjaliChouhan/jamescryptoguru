@@ -55,7 +55,7 @@
     requirements : string[];
     reviews : IReview[];
     totalReviews: number;
-    introVideo : string;
+    introVideo : JSX.Element;
   }
 
   export interface IModule{

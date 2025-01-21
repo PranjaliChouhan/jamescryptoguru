@@ -210,34 +210,45 @@ export const MainCardStyles = styled.div`
 `;
 
 export interface IVideoStyles {
-  $isLoading: boolean;
+  $isLoading: boolean
 }
+
 export const VideoStyles = styled.div<IVideoStyles>`
   position: relative;
-  cursor: pointer;
-  height: 200px;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: ${(props) => (props.$isLoading ? "hsla(0, 0%, 60%, 0.1)" : "transparent")};
+  
   .load {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    z-index: 0;
     align-items: center;
-    ${(props) =>
-      props.$isLoading &&
-      css`
-        background: hsla(0, 0%, 60%, 0.1);
-      `}
+    flex-direction: column;
+    z-index: 1;
   }
-  @media screen and (min-width: 490px) and (max-width: 728px) {
-    height: 300px;
+
+  .desktop,
+  .tab,
+  .mobile,
+  & > div {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
   }
-  @media screen and (min-width: 998px) {
-    height: 300px;
+
+  iframe {
+    width: 100% !important;
+    height: 100% !important;
   }
-`;
+`
+
 
 interface ISideCardStyle {
   $isEnrollBtnDisabled?: boolean;
