@@ -1,36 +1,43 @@
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 export async function middleware(req: NextRequest) {
-  const res = NextResponse.next()
-  const supabase = createMiddlewareClient({ req, res })
+  const res = NextResponse.next();
+  const supabase = createMiddlewareClient({ req, res });
+
+  // Retrieve the current session
   const {
     data: { session },
-  } = await supabase.auth.getSession()
+  } = await supabase.auth.getSession();
 
-  // Protect all course routes
-  if (req.nextUrl.pathname.startsWith('/courses')) {
+  const url = req.nextUrl;
+
+  // Check if the user is accessing protected routes
+  if (url.pathname.startsWith('/courses') || url.pathname.startsWith('/dashboard')) {
+    // Redirect to login if not authenticated
     if (!session) {
-      return NextResponse.redirect(new URL('/login', req.url))
+      return NextResponse.redirect(new URL('/login', req.url));
     }
 
-    // Check if user has active subscription
-    const { data: subscription } = await supabase
-      .from('subscriptions')
-      .select('status')
-      .eq('user_id', session.user.id)
-      .single()
+    // Check subscription status for course-related routes
+    if (url.pathname.startsWith('/courses')) {
+      const { data: subscription, error } = await supabase
+        .from('subscriptions')
+        .select('status')
+        .eq('user_id', session.user.id)
+        .single();
 
-    if (!subscription || subscription.status !== 'active') {
-      return NextResponse.redirect(new URL('/pricing', req.url))
+      if (error || !subscription || subscription.status !== 'active') {
+        // Redirect to the pricing page if the user doesn't have an active subscription
+        return NextResponse.redirect(new URL('/pricing', req.url));
+      }
     }
   }
 
-  return res
+  return res;
 }
 
 export const config = {
   matcher: ['/courses/:path*', '/dashboard/:path*'],
-}
-
+};
