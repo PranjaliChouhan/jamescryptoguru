@@ -12,9 +12,25 @@
 // } from "@/components/ui/dialog"
 // import { signIn } from '../../../lib/actions/auth'
 
-// interface LoginFormProps {
-//   onClose: () => void;
-// }
+import { useRouter } from 'next/router'
+
+interface LoginFormProps {
+  onClose: () => void
+}
+
+export function LoginForm({ onClose }: LoginFormProps) {
+  return (
+    <div className="bg-white p-8 rounded-lg shadow-md">
+      {/* Add your login form content here */}
+      <button 
+        onClick={onClose}
+        className="mt-4 w-full bg-primary text-white p-2 rounded hover:bg-primary/90"
+      >
+        Cancel
+      </button>
+    </div>
+  )
+}
 
 // export function LoginForm({ onClose }: LoginFormProps) {
 //   const [error, setError] = useState<string | null>(null)
