@@ -180,14 +180,15 @@ export const CourseDetailComp = () => {
                     {!userCourse?.isPaid && <></>}
                     <div className="btns">
                       <FormBtnStyles
-                        onClick={() => handleClickPayments(true)}
+                     
                         disabled={userCourse?.isPaid}
                       >
-                        {userCourse?.isPaid ? (
+                        {/* {userCourse?.isPaid ? (
                           <>Subscribed</>
                         ) : (
                           <>Subscribe Now</>
-                        )}
+                        )} */}
+                         Learn and Grow
                       </FormBtnStyles>
                       {!userCourse?.isPaid && (
                         <>
@@ -234,14 +235,15 @@ export const CourseDetailComp = () => {
                   )}
                   <div className="btns">
                     <FormBtnStyles
-                      onClick={() => handleClickPayments(true)}
+                     
                       disabled={userCourse?.isPaid}
                     >
-                      {userCourse?.isPaid ? (
+                      {/* {userCourse?.isPaid ? (
                         <>Subscribed</>
                       ) : (
                         <>Subscribe Now</>
-                      )}
+                      )} */}
+                      Learn and Grow
                     </FormBtnStyles>
                     {!userCourse?.isPaid && (
                       <>
@@ -510,10 +512,11 @@ export const SideCard: FunctionComponent<ISideCard> = ({
 
       <div className="btns">
         <FormBtnStyles
-          onClick={() => handleMakePayments(true)}
+          
           disabled={userCourse?.isPaid}
         >
-          {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>}
+          {/* {userCourse?.isPaid ? <>Subscribed</> : <>Subscribe Now</>} */}
+          Learn and Grow
         </FormBtnStyles>
         {!userCourse?.isPaid && <></>}
       </div>

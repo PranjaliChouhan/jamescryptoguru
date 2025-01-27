@@ -16,6 +16,8 @@ import { RootState } from "@/redux/store";
 const Header: FunctionComponent = () => {
   const dispatch = useAppDispatch();
   const { isNavOpen } = useAppSelector((state: RootState) => state.data);
+  const router = useRouter();
+
   const toggleMenu = () => {
     dispatch(toggleNav());
   };
@@ -24,9 +26,12 @@ const Header: FunctionComponent = () => {
     dispatch(setShowPaymentModaL(true));
   };
 
+  const handleLogin = () => {
+    router.push('/login');
+  };
+
   useEffect(() => {
     const handleRouteChange = () => {
-      // close mobile slidein if the route changes
       dispatch(closeNav());
     };
     router.events.on("routeChangeStart", handleRouteChange);
@@ -35,8 +40,6 @@ const Header: FunctionComponent = () => {
     };
   }, []);
 
-  const router = useRouter();
-  // I need to change the logo from vephla -> Xendar and ship!!
   return (
     <HeaderStyle>
       <div className="logo">
@@ -85,16 +88,9 @@ const Header: FunctionComponent = () => {
         <button onClick={handleSubscribe} className="bg-[#e39c44] text-white px-4 py-2 rounded-md">
           Subscribe
         </button>
-        {/* <div className="icons">
-          <Heart />
-          <Notification />
-        </div> */}
-        {/* <Image
-          src={"/assets/nav_avatar.png"}
-          alt={"nav avatar"}
-          width={40}
-          height={40}
-        /> */}
+        <button onClick={handleLogin} className="bg-[#e39c44] text-white px-4 py-2 rounded-md">
+          Login
+        </button>
       </div>
 
       <div className="mobile mobile-nav-links">
