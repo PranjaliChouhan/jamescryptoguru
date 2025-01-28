@@ -12,7 +12,6 @@ import { ICourse } from "@/components/CourseCard/CourseCard";
 import { IFaq } from "@/components/HomepageComp/Faq";
 import { ITestimony } from "@/components/HomepageComp/Testimonials";
 import { INotification } from "@/components/Info/Notifications";
-import { convertToNaira } from "@/components/Info/Wishlist";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface InitialState {
